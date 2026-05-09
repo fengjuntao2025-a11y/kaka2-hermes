@@ -1,0 +1,93 @@
+# 忽略敏感信息文件
+*.env
+*.key
+*.pem
+*.secret
+*.token
+*.password
+*.credentials
+*.auth
+*.json
+
+# 忽略配置文件中的敏感部分
+config.yaml
+config.yml
+config.json
+config.toml
+
+# 忽略临时文件
+*.tmp
+*.temp
+*.log
+*.pid
+*.lock
+
+# 忽略系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 忽略Python相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 忽略Node.js相关
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# 忽略IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 忽略Hermes特定敏感文件
+auth.json
+channel_directory.json
+gateway_state.json
+processes.json
+models_dev_cache.json
+
+# 忽略备份文件
+*.bak
+*.backup
+*.old
+
+# 忽略临时目录
+tmp/
+temp/
+.tmp/
+.temp/
+
+# 允许的文件模式
+!memory/*.md
+!skills/*.md
+!config/*.template
+!scripts/*.sh
+!scripts/*.py
+!contexts/*.md
+!README.md
+!LICENSE
+!*.example
