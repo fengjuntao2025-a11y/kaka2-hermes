@@ -1,0 +1,55 @@
+#!/bin/bash
+# Hermes 同步系统快速安装指南
+
+echo "=== Hermes 同步系统 ==="
+echo ""
+
+# 检查是否已安装
+if [ -f ~/hermes-memory-project/scripts/sync-manager.sh ]; then
+    echo "✅ 同步系统已安装"
+    echo ""
+    echo "可用命令:"
+    echo "  ./sync 同步          # 执行完整同步"
+    echo "  ./sync 增量          # 执行增量同步"
+    echo "  ./sync 状态          # 查看同步状态"
+    echo "  ./sync 报告          # 生成同步报告"
+    echo "  ./sync 清理          # 清理旧备份"
+    echo "  ./sync 强制          # 强制同步"
+    echo ""
+    echo "守护进程管理:"
+    echo "  bash scripts/sync-daemon.sh start    # 启动守护进程"
+    echo "  bash scripts/sync-daemon.sh stop     # 停止守护进程"
+    echo "  bash scripts/sync-daemon.sh status   # 查看状态"
+    echo ""
+    echo "监控:"
+    echo "  bash scripts/monitor-sync.sh 检查   # 检查健康状态"
+    echo "  bash scripts/monitor-sync.sh 报告   # 生成监控报告"
+    echo ""
+    echo "自动同步:"
+    echo "  crontab config/cron-jobs.txt        # 设置定时任务"
+    echo ""
+    echo "GitHub仓库:"
+    echo "  https://github.com/fengjuntao2025-a11y/kaka2-hermes"
+    echo ""
+    echo "文档:"
+    echo "  cat docs/SYNC-STRATEGY.md           # 查看同步策略"
+    echo ""
+    echo "当前状态:"
+    cd ~/hermes-memory-project
+    ./sync 状态
+else
+    echo "❌ 同步系统未安装"
+    echo ""
+    echo "安装步骤:"
+    echo "1. 运行安装脚本:"
+    echo "   bash scripts/install-sync-system.sh"
+    echo ""
+    echo "2. 设置定时任务:"
+    echo "   crontab config/cron-jobs.txt"
+    echo ""
+    echo "3. 启动守护进程:"
+    echo "   bash scripts/sync-daemon.sh start"
+    echo ""
+    echo "4. 测试同步:"
+    echo "   ./sync 同步"
+fi
